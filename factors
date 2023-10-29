@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 import sys
 
+
 def factorize(number):
     for p in range(2, number + 1):
         if number % p == 0:
             q = number // p
-            return f"{number}={p}*{q}"
+            return f"{number}={q}*{p}"
 
 
 if len(sys.argv) != 2:
@@ -14,7 +15,7 @@ if len(sys.argv) != 2:
 
 input_file = sys.argv[1]
 
-try: 
+try:
     with open(input_file, "r") as file:
         for line in file:
             number = int(line.strip())
@@ -27,4 +28,3 @@ except FileNotFoundError:
 except ValueError:
     print("Invalid number in the file.")
     sys.exit(1)
-    
